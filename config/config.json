@@ -1,0 +1,18 @@
+{
+    "api": {
+        "spot_hinta": {
+            "base_url": "https://api.spot-hinta.fi/",
+            "endpoint": "/api/just-now-ranks-and-price",
+            "api_key": "your_api_key_here"
+        }
+    },
+    "aws": {
+        "ec2_instance": {
+            "type": "t2.micro",
+            "region": "eu-north-1"
+        }
+    },
+    "monitoring": {
+        "frequency": 10
+    }
+}

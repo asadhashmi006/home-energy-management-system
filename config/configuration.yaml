@@ -1,0 +1,6 @@
+sensor:
+  - platform: rest
+    name: Spot Hinta
+    resource: https://api.spot-hinta.fi/JustNowRanksAndPrice
+    value_template: "{{ value_json.price }}"
+    unit_of_measurement: "EUR/kWh"
