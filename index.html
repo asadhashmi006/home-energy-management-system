@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Price Fetcher</title>
+</head>
+<body>
+    <h1>Current Electricity Price</h1>
+    <pre id="data"></pre>
+    <script>
+        fetch("https://api.spot-hinta.fi/JustNowRanksAndPrice")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('data').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error("Error fetching data:", error));
+    </script>
+</body>
+</html>
