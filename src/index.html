@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Energy Management System</title>
+</head>
+<body>
+    <h1>Energy Prices</h1>
+    <div id="price-container"></div>
+    <script>
+        fetch('https://api.spot-hinta.fi/v1/prices')
+            .then(response => response.json())
+            .then(data => {
+                let container = document.getElementById('price-container');
+                data.forEach(price => {
+                    container.innerHTML += `<p>Hour: ${price.hour}, Price: ${price.price} EUR</p>`;
+                });
+            });
+    </script>
+</body>
+</html>
